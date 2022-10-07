@@ -3,4 +3,18 @@
  *
  * See the README.md file at the root of this repository for instructions.
  */
-console.log("Hello World!");
+
+
+import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './app/routes';
+import {initializeConnections} from './app/middlewares/intializeConnections';
+
+const app = express()
+
+app.use(bodyParser.json());
+app.use(initializeConnections);
+app.use('/',routes);
+app.listen(process.env.PORT)
+
+

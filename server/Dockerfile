@@ -1,6 +1,6 @@
 FROM node:14-alpine
 
-# See the docker-compose.ymp file for the port that is set
+# See the docker-compose.yml file for the port that is set
 ARG EXPOSE_PORT
 
 WORKDIR /server
